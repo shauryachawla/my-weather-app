@@ -1,25 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bulma/css/bulma.css';
+import Form from './Form';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      country: "yo",
+      region: ""
+    }
+  }
+
+  getInfo = (obj) => {
+    this.setState({ country: obj.country, region: obj.region })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <section className="hero is-success is-fullheight">
+          <div className="hero-body">
+            <div className="container">
+              <div className="columns">
+                <div className="column">
+                  <div className="container is-fluid">
+                    <div className="notification is-info">
+                      <Form getInfo={this.getInfo} />
+                    </div>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="container is-fluid">
+                    <div className="notification is-info">
+                      This container is <strong>fluid</strong>: it will have a 20px gap on either side, on any viewport size.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
       </div>
     );
   }
