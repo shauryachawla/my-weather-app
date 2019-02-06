@@ -1,18 +1,53 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import 'bulma/css/bulma.css';
 import Form from './Form';
-
+import { open_key } from "./keys"
+import Meter from "./Meter"
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      country: "yo",
-      region: ""
+      country: "",
+      region: "",
+      data: {
+        temperature: 0,
+        humidity: 0,
+        conditions: ""
+      }
+
     }
   }
 
+
   getInfo = (obj) => {
     this.setState({ country: obj.country, region: obj.region })
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${obj.region},${obj.country}&units=metric&APPID=` + open_key)
+      .then(res => {
+        const data = res.data;
+        // this.setState({ persons });
+        // console.log(data)
+        this.showWeather(data)
+      })
+  }
+
+  showWeather = (data) => {
+    console.log(data)
+    const temp_c = data.main.temp
+    const humidity = data.main.humidity
+    const conditions = data.weather[0].main
+    const oldData = this.state.data
+    oldData['temperature'] = temp_c
+    oldData['humidity'] = humidity
+    oldData['conditions'] = conditions
+    this.setState({ data: oldData })
+    // console.log(conditions)
+  }
+
+
+  componentDidMount() {
+
+    // console.log(`lolol` + open_key)
   }
 
   render() {
@@ -32,7 +67,7 @@ class App extends Component {
                 <div className="column">
                   <div className="container is-fluid">
                     <div className="notification is-info">
-                      This container is <strong>fluid</strong>: it will have a 20px gap on either side, on any viewport size.
+                      <Meter details={this.state} />
                     </div>
                   </div>
                 </div>

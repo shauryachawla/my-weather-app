@@ -20,10 +20,10 @@ class Form extends Component {
   render() {
     return (
       <form type="submit" onSubmit={this.handleChange}>
-        <input className="input" type="text" name="country" placeholder="Country" ref={this.country} />
+        <input className="input" type="text" defaultValue="IN" name="country" placeholder="Country" ref={this.country} />
         <br />
         <br />
-        <input className="input" type="text" placeholder="Region" ref={this.region} />
+        <input className="input" type="text" defaultValue="Delhi" placeholder="Region" ref={this.region} />
         <br />
         <br />
         <button type="submit"
