@@ -21,7 +21,7 @@ class App extends Component {
 
   getInfo = (obj) => {
     this.setState({ country: obj.country, region: obj.region })
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${obj.region},${obj.country}&units=metric&APPID=` + open_key)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${obj.region},${obj.country}&units=metric&APPID=` + open_key)
       .then(res => {
         const data = res.data;
         // this.setState({ persons });
