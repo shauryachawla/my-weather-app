@@ -19,16 +19,20 @@ class Form extends Component {
 
   render() {
     return (
-      <form type="submit" onSubmit={this.handleChange}>
-        <input className="input" type="text" defaultValue="IN" name="country" placeholder="Country" ref={this.country} />
-        <br />
-        <br />
-        <input className="input" type="text" defaultValue="Delhi" placeholder="Region" ref={this.region} />
-        <br />
-        <br />
-        <button type="submit"
-          className="button">Submit</button>
-      </form>
+      <div className="field">
+        <form type="submit" onSubmit={this.handleChange}>
+          <label class="label">Country</label>
+          <input className="input" type="text" defaultValue="" name="country" placeholder="Country" ref={this.country} />
+          <br />
+          <br />
+          <label class="label">Region</label>
+          <input className="input" type="text" defaultValue="" placeholder="Region" ref={this.region} />
+          <br />
+          <br />
+          <button type="submit"
+            className="button">Submit</button>
+        </form>
+      </div>
     );
   }
 }

@@ -53,20 +53,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <section className="hero is-success is-fullheight">
-          <div className="hero-body">
+        <section className="hero is-danger is-fullheight">
+          <div className="hero-body ">
             <div className="container">
               <div className="columns">
                 <div className="column">
                   <div className="container is-fluid">
-                    <div className="notification is-info">
+                    <div className="notification has-background-warning">
                       <Form getInfo={this.getInfo} />
                     </div>
                   </div>
                 </div>
                 <div className="column">
                   <div className="container is-fluid">
-                    <div className="notification is-info">
+                    <div className="notification has-background-grey-dark">
                       <Meter details={this.state} />
                     </div>
                   </div>
