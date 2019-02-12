@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import 'bulma/css/bulma.css';
 import Form from './Form';
 import { open_key } from "./keys"
 import Meter from "./Meter"
