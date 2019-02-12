@@ -23,10 +23,12 @@ class Form extends Component {
         <form type="submit" onSubmit={this.handleChange}>
           <label class="label">Country</label>
           <input className="input" type="text" defaultValue="" name="country" placeholder="Country" ref={this.country} />
+          <p class="help is-success">Ex: IN</p>
           <br />
           <br />
           <label class="label">Region</label>
           <input className="input" type="text" defaultValue="" placeholder="Region" ref={this.region} />
+          <p class="help is-success">Ex: Delhi</p>
           <br />
           <br />
           <button type="submit"
