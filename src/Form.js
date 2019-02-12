@@ -13,7 +13,7 @@ class Form extends Component {
     }
     // console.log(oldState)
     this.props.getInfo(infoObj)
-    e.target.reset()
+    // e.target.reset()
   }
 
 
