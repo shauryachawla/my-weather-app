@@ -25,11 +25,11 @@ class Form extends Component {
           <input className="input" type="text" defaultValue="" name="country" placeholder="Country" ref={this.country} />
           <p class="help is-success">Ex: IN</p>
           <br />
-          <br />
+
           <label class="label">Region</label>
           <input className="input" type="text" defaultValue="" placeholder="Region" ref={this.region} />
           <p class="help is-success">Ex: Delhi</p>
-          <br />
+
           <br />
           <button type="submit"
             className="button">Submit</button>
